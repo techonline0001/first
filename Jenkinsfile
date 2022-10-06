@@ -1,25 +1,26 @@
-pipeline{
-  agent any
-  stages{
-   stage('clone'){
-    steps {
-       echo "this is cloning"
-     }
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                echo 'Cloning'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
+            }
+        }
     }
-   stage('build'){
-       steps{
-         echo "build with maven"
-      }
-     }
-   stage('test'){
-     steps{
-       echo "test result"
-     }
-   }
-   stage('deploy'){
-    steps{
-   echo "deploy"
-    }
-  }
- }
 }
